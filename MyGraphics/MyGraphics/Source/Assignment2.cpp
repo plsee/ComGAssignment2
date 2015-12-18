@@ -416,7 +416,7 @@ void Assignment2::Render()
 
 	//Transformations
 	modelStack.Scale(1000, 0, 1000);
-	//RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], false);
 
     modelStack.PopMatrix();
 

@@ -39,6 +39,7 @@ class Assignment2 : public Scene
         GEO_HELMET,
         GEO_CUPSHAPE,
 		GEO_HORNS,
+		GEO_EXPLOSION,
 
 
 		NUM_GEOMETRY,
@@ -86,7 +87,9 @@ public:
 	void renderHead();
     void renderBackground();
 	void characterAnimations(double dt);
-
+	void resetAnimation();
+	void walkingAnimation(double dt);
+	void armAnimation(double dt);
 
 private:
 
@@ -115,13 +118,25 @@ private:
 	float FullArmRotAngle;
 	float legRotAngle;
 	float charPositionX, charPositionY, charPositionZ;
+	float walkDelay;
+	float cannonExtendLength;
+	float explosionSize;
+	float explosionDuration;
 
+	
+
+	bool armRot;
 	bool rotUp;
 	bool Animation;
 	bool Walk;
 	bool walkLeftLegForward;
 	bool MoveArm;
-	bool ShootBullet;
+	bool shootBullet;
+	bool cannonExtend;
+	bool cameraLock;
+	bool explosionEnlarge;
+	
+	
 
 	MS modelStack, viewStack, projectionStack;
 

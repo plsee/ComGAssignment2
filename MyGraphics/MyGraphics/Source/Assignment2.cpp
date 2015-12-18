@@ -20,7 +20,17 @@ charPositionY(0),
 charPositionZ(0),
 legRotAngle(0),
 Animation(false),
-walkLeftLegForward(true)
+walkLeftLegForward(true),
+Walk(true),
+walkDelay(0),
+cameraLock(true),
+armRot(false),
+cannonExtendLength(0),
+cannonExtend(false),
+explosionSize(0.0001f),
+shootBullet(false),
+explosionDuration(0),
+explosionEnlarge(true)
 {
 
 }
@@ -248,6 +258,10 @@ void Assignment2::Init()
     meshList[GEO_TREE_LEAFS]->material.kSpecular.Set(0.2, 0.2, 0.2);
     meshList[GEO_TREE_LEAFS]->material.kShininess = 0.5f;
 
+	//Explosions
+	meshList[GEO_EXPLOSION] = MeshBuilder::GenerateSphere("Explosions", Color(1, 0.655f, 0.392f) , 36, 18);
+
+
 
 
 
@@ -330,7 +344,22 @@ void Assignment2::Update(double dt)
 
 		}
 	}
+	
+	if (cameraLock == true){
+		camera.targetLocX = charPositionX;
+		camera.targetLocY = charPositionY + 15;
+		camera.targetLocZ = charPositionZ; 
+	}
+	if (Application::IsKeyPressed('0')){
+		if (cameraLock == true){
+			cameraLock = false;
+		}
+		else{
+			cameraLock = true;
+		}
 
+
+	}
 
 	Assignment2::characterAnimations(dt);
 	
@@ -574,11 +603,12 @@ void Assignment2::renderLeftArm(){
 
 	modelStack.PopMatrix();//Lower arm guard
 
-    //Cannons
-    //Lower arm guard
+  
+
+    //Left Cannon
     modelStack.PushMatrix();
 
-    modelStack.Translate(0.2, -2, 0.2);
+	modelStack.Translate(0.2, cannonExtendLength - 1.2f, 0.2);
     modelStack.Scale(0.15f, 0.5f, 0.15f);
 
 
@@ -587,15 +617,26 @@ void Assignment2::renderLeftArm(){
 
     modelStack.PopMatrix();//Left Cannon
 
+
+	//Right Cannon
     modelStack.PushMatrix();
 
-    modelStack.Translate(-0.2, -2, 0.2);
+	modelStack.Translate(-0.2, cannonExtendLength - 1.2f, 0.2);
     modelStack.Scale(0.15f, 0.5f, 0.15f);
 
 
     RenderMesh(meshList[GEO_BODY_CYLINDERS], true);
     modelStack.PopMatrix();//Right Cannon
 
+	//Explosions
+	modelStack.PushMatrix();
+	modelStack.Translate(0, cannonExtendLength - 2, 0.2);
+	modelStack.Scale(explosionSize, explosionSize, explosionSize);
+
+
+	RenderMesh(meshList[GEO_EXPLOSION], false);
+
+	modelStack.PopMatrix();//explosion
 
 
     //Fist
@@ -663,7 +704,6 @@ void Assignment2::renderRightArm(){
 
 	//Full Lower Arm
 
-
 	modelStack.PushMatrix();
 
 	modelStack.Translate(0, -1.5, 0);
@@ -689,12 +729,16 @@ void Assignment2::renderRightArm(){
 
 	modelStack.PopMatrix();//Lower arm guard
 
-    //Cannons
 
+
+    //Cannons
+	//Both Cannons
+	modelStack.PushMatrix();
+	
     //Lower arm guard
     modelStack.PushMatrix();
 
-    modelStack.Translate(0.2, -2, 0.2);
+	modelStack.Translate(0.2, cannonExtendLength - 1.2f, 0.2);
     modelStack.Scale(0.15f, 0.5f, 0.15f);
 
 
@@ -705,7 +749,7 @@ void Assignment2::renderRightArm(){
 
     modelStack.PushMatrix();
 
-    modelStack.Translate(-0.2, -2, 0.2);
+	modelStack.Translate(-0.2, cannonExtendLength - 1.2f, 0.2);
     modelStack.Scale(0.15f, 0.5f, 0.15f);
 
 
@@ -715,6 +759,19 @@ void Assignment2::renderRightArm(){
     modelStack.PopMatrix();//Right Cannon
 
 
+	//Explosions
+	modelStack.PushMatrix();
+	modelStack.Translate(0, cannonExtendLength - 2, 0.2);
+	modelStack.Scale(explosionSize, explosionSize, explosionSize);
+
+
+	RenderMesh(meshList[GEO_EXPLOSION], false);
+
+	modelStack.PopMatrix();//explosion
+
+
+
+	modelStack.PopMatrix();//Both Cannons
     //Fist
 	modelStack.PushMatrix();
 
@@ -996,8 +1053,48 @@ void Assignment2::characterAnimations(double dt){
 		Animation = true;
 
 	}
+	if (Application::IsKeyPressed('1')){
 
-	if (Animation == true){
+		resetAnimation();
+	}
+
+	//walking Animation
+	walkingAnimation(dt);
+	
+	//Hand Animations
+	armAnimation(dt);
+	
+
+
+
+}
+
+void Assignment2::resetAnimation(){
+
+
+	Animation = false;
+	Walk = true;
+	walkDelay = 0;
+	legRotAngle = 0;
+	walkLeftLegForward = true;
+	charPositionX = 0;
+	charPositionY = 0;
+	charPositionZ = 0;
+	armRot = false;
+	FullArmRotAngle = 0;
+	cannonExtend = false;
+	cannonExtendLength = 0;
+	explosionSize = 0.0001f;
+	shootBullet = false;
+	explosionEnlarge = true;
+	explosionDuration = 0;
+
+}
+
+void Assignment2::walkingAnimation(double dt){
+
+	//Walking Animation
+	if (Animation == true && Walk == true){
 
 		if (walkLeftLegForward == true){
 			legRotAngle += 60 * dt;
@@ -1010,10 +1107,97 @@ void Assignment2::characterAnimations(double dt){
 			legRotAngle -= 60 * dt;
 			if (legRotAngle <= -30){
 				walkLeftLegForward = true;
-				Animation = false;
 			}
 		}
+		walkDelay++;
+		charPositionZ += 10 * dt;
+		if (walkDelay > 200){
+
+			Walk = false;
+			armRot = true;
+		}
+
 	}
+
+
+}
+void Assignment2::armAnimation(double dt){
+
+	//Arm Rotation
+	if (armRot == true){
+
+		FullArmRotAngle -= 60 * dt;
+		if (legRotAngle > 0){
+
+			legRotAngle -= 60 * dt;
+
+		}
+		else if (legRotAngle < 0){
+
+			legRotAngle += 60 * dt;
+
+		}
+		if (FullArmRotAngle <= -45){
+			armRot = false;
+			cannonExtend = true;
+		}
+
+	}
+
+	if (cannonExtend == true){
+
+		cannonExtendLength -= 1 * dt;
+
+		if (cannonExtendLength <= -1){
+
+			cannonExtend = false;
+			shootBullet = true;
+		}
+		
+
+	}
+
+	if (shootBullet == true){
+		if (explosionDuration < 10){
+
+			explosionDuration += 10 * dt;
+
+			if (explosionEnlarge == true){
+
+				explosionSize += 10 * dt;
+
+				if (explosionSize >= 1){
+
+					explosionEnlarge = false;
+
+				}
+
+			}
+			else{
+				explosionSize -= 10 * dt;
+
+				if (explosionSize <= 0.1){
+
+					
+					explosionEnlarge = true;
+
+				}
+
+			}
+
+
+
+
+		}
+		if (explosionDuration >= 10){
+
+			explosionSize = 0.0001f;
+
+		}
+
+
+	}
+	
 
 
 }

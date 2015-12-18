@@ -13,11 +13,14 @@
 Assignment2::Assignment2() :
 LSPEED(10),
 onLight(1),
-leftFullArmRotAngle(0),
+FullArmRotAngle(0),
 rotUp(true),
 charPositionX(0),
 charPositionY(0),
-charPositionZ(0)
+charPositionZ(0),
+legRotAngle(0),
+Animation(false),
+walkLeftLegForward(true)
 {
 
 }
@@ -68,7 +71,7 @@ void Assignment2::Init()
 
 	//Light Object
 
-	light[0].position.Set(0, 20, 0);
+	light[0].position.Set(0, 40, 0);
 	light[0].color.Set(1, 1, 1);
 	light[0].power = 1;
 	light[0].kC = 1.f;
@@ -156,7 +159,7 @@ void Assignment2::Init()
     meshList[GEO_WAIST]->material.kShininess = 0.8;
 
     //Upper Leg
-    meshList[GEO_UPPERLEG] = MeshBuilder::GenerateCylinder("UpperLeg", Color(1, 1, 1), 4, 0.75, 0.75, 16, 0);
+    meshList[GEO_UPPERLEG] = MeshBuilder::GenerateCylinder("UpperLeg", Color(1, 1, 1), 5, 0.75, 0.75, 16, 0);
     meshList[GEO_UPPERLEG]->material.kAmbient.Set(0.5, 0.5, 0.5);
     meshList[GEO_UPPERLEG]->material.kDiffuse.Set(0.2, 0.2, 0.2);
     meshList[GEO_UPPERLEG]->material.kSpecular.Set(1, 1, 1);
@@ -169,7 +172,7 @@ void Assignment2::Init()
     meshList[GEO_LOWERLEG]->material.kSpecular.Set(1, 1, 1);
     meshList[GEO_LOWERLEG]->material.kShininess = 0.8;
 
-    //Lower Leg
+    //Feet
     meshList[GEO_FEET] = MeshBuilder::GenerateHemisphere("Feet", Color(0, 0, 0));
     meshList[GEO_FEET]->material.kAmbient.Set(0.5, 0.5, 0.5);
     meshList[GEO_FEET]->material.kDiffuse.Set(0.2, 0.2, 0.2);
@@ -191,11 +194,20 @@ void Assignment2::Init()
     meshList[GEO_HELMET]->material.kShininess = 0.8;
 
     //Horn Thing
-    meshList[GEO_CUPSHAPE] = MeshBuilder::GenerateCylinder("Body Cylinders", Color(0, 0, 0), 1, 1, 2, 16, 0);
-    meshList[GEO_CUPSHAPE]->material.kAmbient.Set(0.3, 0.3, 0.3);
-    meshList[GEO_CUPSHAPE]->material.kDiffuse.Set(0.7, 0.7, 0.7);
-    meshList[GEO_CUPSHAPE]->material.kSpecular.Set(0.2, 0.2, 0.2);
-    meshList[GEO_CUPSHAPE]->material.kShininess = 0.5f;
+	meshList[GEO_CUPSHAPE] = MeshBuilder::GenerateCylinder("Horn Connector", Color(1, 0.8f, 0), 1, 1, 2, 16, 0);
+	meshList[GEO_CUPSHAPE]->material.kAmbient.Set(0.5, 0.5, 0.5);
+	meshList[GEO_CUPSHAPE]->material.kDiffuse.Set(0.2, 0.2, 0.2);
+	meshList[GEO_CUPSHAPE]->material.kSpecular.Set(1, 1, 1);
+	meshList[GEO_CUPSHAPE]->material.kShininess = 0.8;
+
+
+	//Horn
+	meshList[GEO_HORNS] = MeshBuilder::GenerateCylinder("Horn", Color(0, 0, 0), 1, 1, 2, 16, 0);
+	meshList[GEO_HORNS]->material.kAmbient.Set(0.5, 0.5, 0.5);
+	meshList[GEO_HORNS]->material.kDiffuse.Set(0.2, 0.2, 0.2);
+	meshList[GEO_HORNS]->material.kSpecular.Set(1, 1, 1);
+	meshList[GEO_HORNS]->material.kShininess = 0.8;
+
 
     //EYES
     meshList[GEO_EYES] = MeshBuilder::GenerateCircle("Eyes", Color(0, 0.718f, 0));
@@ -319,22 +331,8 @@ void Assignment2::Update(double dt)
 		}
 	}
 
-	if (Application::IsKeyPressed('Y')){
-        if (rotUp == true){
-            leftFullArmRotAngle -= (100 * dt);
-            if (leftFullArmRotAngle < -45){
-                rotUp = false;
-            }
-        }
-        else{
-            leftFullArmRotAngle += (100 * dt);
-            if (leftFullArmRotAngle > 0){
-                rotUp = true;
-            }
 
-
-        }
-	}
+	Assignment2::characterAnimations(dt);
 	
 }
 
@@ -473,18 +471,30 @@ void Assignment2::renderBody(){
     //Waist
     modelStack.PushMatrix();
 
-    modelStack.Translate(0, 16, -1.8);
-    modelStack.Rotate(-leftFullArmRotAngle / 4, 1, 0, 0);
+    modelStack.Translate(0, 16, -1.8f);
+    modelStack.Rotate(-FullArmRotAngle / 4, 1, 0, 0);
     modelStack.Rotate(180, 0, 1, 0);
     modelStack.Rotate(-20, 1, 0, 0);
     modelStack.Scale(1, 1, 1);
-
 
 
     RenderMesh(meshList[GEO_WAIST], true);
 
     
     modelStack.PopMatrix();//Waist
+
+	//belly
+	modelStack.PushMatrix();
+
+	modelStack.Translate(0, 17, 0.8f);
+	modelStack.Rotate(-5, 1, 0, 0);
+	modelStack.Scale(1.1f, 0.5f, 1);
+
+
+	RenderMesh(meshList[GEO_WAIST], true);
+
+
+	modelStack.PopMatrix();//Belly
 
 
    
@@ -510,7 +520,7 @@ void Assignment2::renderLeftArm(){
 	modelStack.PushMatrix();
 
 	modelStack.Translate(4.5f, 21, 0);
-	modelStack.Rotate(leftFullArmRotAngle, 1, 0, 0);
+	modelStack.Rotate(FullArmRotAngle, 1, 0, 0);
 	modelStack.Scale(3, 3, 3);
 
     RenderMesh(meshList[GEO_SHOULDER], true);
@@ -542,7 +552,7 @@ void Assignment2::renderLeftArm(){
 	modelStack.PushMatrix();	
 
 	modelStack.Translate(0, -1.5, 0);
-	modelStack.Rotate(leftFullArmRotAngle, 1, 0, 0);
+	modelStack.Rotate(FullArmRotAngle, 1, 0, 0);
 	modelStack.Translate(0, -0.3, 0);
 
 	//Lower Cylinder Connector
@@ -625,7 +635,7 @@ void Assignment2::renderRightArm(){
 	modelStack.PushMatrix();
 
 	modelStack.Translate(-4.5f, 21, 0);
-	modelStack.Rotate(leftFullArmRotAngle, 1, 0, 0);
+	modelStack.Rotate(FullArmRotAngle, 1, 0, 0);
 	modelStack.Scale(3, 3, 3);
 
     RenderMesh(meshList[GEO_SHOULDER], true);
@@ -657,7 +667,7 @@ void Assignment2::renderRightArm(){
 	modelStack.PushMatrix();
 
 	modelStack.Translate(0, -1.5, 0);
-	modelStack.Rotate(leftFullArmRotAngle, 1, 0, 0);
+	modelStack.Rotate(FullArmRotAngle, 1, 0, 0);
 	modelStack.Translate(0, -0.3, 0);
 
 	//Lower Cylinder Connector
@@ -731,6 +741,10 @@ void Assignment2::renderLeftLeg(){
     modelStack.PushMatrix();
 
     modelStack.Translate(1.5, 16, 0);
+	modelStack.Translate(0, 3, 0);
+	modelStack.Rotate(-legRotAngle, 1, 0, 0);
+	modelStack.Translate(0, -3, 0);
+
     //Transformations
 
     //Upper Leg
@@ -743,15 +757,21 @@ void Assignment2::renderLeftLeg(){
 
     modelStack.PopMatrix();//Upper Leg
     
-    modelStack.PushMatrix();
 
+	//Full Lower Leg
+    modelStack.PushMatrix();
+	modelStack.Rotate(legRotAngle / 2, 1, 0, 0);
+
+	//Lower leg
+	modelStack.PushMatrix();
     modelStack.Translate(0, -6, 0);
+	
     modelStack.Scale(2, 8, 3);
     RenderMesh(meshList[GEO_LOWERLEG], true);
 
     modelStack.PopMatrix();//Lower Leg
 
-
+	//Feet
     modelStack.PushMatrix();
 
     modelStack.Translate(0, -11, 0);
@@ -761,7 +781,9 @@ void Assignment2::renderLeftLeg(){
 
     modelStack.PopMatrix();//Feet
 
-    modelStack.PopMatrix();
+    modelStack.PopMatrix();//Full Lower Leg
+
+	modelStack.PopMatrix();//Full Leg
 
 
 
@@ -775,7 +797,10 @@ void Assignment2::renderRightLeg(){
     modelStack.PushMatrix();
 
     modelStack.Translate(-1.5, 16, 0);
-    //Transformations
+	modelStack.Translate(0, 3, 0);
+	modelStack.Rotate(legRotAngle, 1, 0, 0); 
+	modelStack.Translate(0, -3, 0);
+
 
     //Upper Leg
     modelStack.PushMatrix();
@@ -786,6 +811,11 @@ void Assignment2::renderRightLeg(){
 
 
     modelStack.PopMatrix();//Upper Leg
+
+
+	//Full Lower Leg
+	modelStack.PushMatrix();
+	modelStack.Rotate(-legRotAngle / 2, 1, 0, 0);
 
     //Lower Leg
     modelStack.PushMatrix();
@@ -805,10 +835,10 @@ void Assignment2::renderRightLeg(){
     RenderMesh(meshList[GEO_FEET], true);
 
     modelStack.PopMatrix();//Feet
-    modelStack.PopMatrix();
+ 
 
-
-     modelStack.PushMatrix();
+	modelStack.PopMatrix(); //Full Lower Leg
+	modelStack.PopMatrix(); //Full Leg
 
 
 
@@ -837,18 +867,36 @@ void Assignment2::renderHead(){
 
     modelStack.PopMatrix();//Head
 
-    //Feeler Connector
+    //Entire Horn
     modelStack.PushMatrix();
 
     modelStack.Translate(0, 3, 2);
 
+	//Feeler Connector
+	modelStack.PushMatrix();
     modelStack.Rotate(45, 1, 0, 0);
     modelStack.Scale(0.5, 4, 0.5);
     RenderMesh(meshList[GEO_CUPSHAPE], true);
-    modelStack.PopMatrix();//Feeler Connector
+	modelStack.PopMatrix();//Feeler Connector
 
+	//Right Horns
+	modelStack.PushMatrix();
+	modelStack.Translate(2, 1.5f, 0.5f);
+	modelStack.Rotate(120, 0, 0, 1);
+	modelStack.Scale(0.5, 4, 0.5);
+	RenderMesh(meshList[GEO_HORNS], true);
 
+	modelStack.PopMatrix();//Right Horn
 
+	//Left Horn
+	modelStack.PushMatrix();
+	modelStack.Translate(-2, 1.5f, 0.5f);
+	modelStack.Rotate(-120, 0, 0, 1);
+	modelStack.Scale(0.5, 4, 0.5);
+	RenderMesh(meshList[GEO_HORNS], true);
+	modelStack.PopMatrix();//Left Horn
+
+	modelStack.PopMatrix();//Entire horn
     //Right Eye
     modelStack.PushMatrix();
 
@@ -937,6 +985,35 @@ void Assignment2::renderBackground(){
 
 
     modelStack.PopMatrix();//TREE TRUNK
+
+
+}
+
+void Assignment2::characterAnimations(double dt){
+
+	if (Application::IsKeyPressed('Y') && Animation == false){
+		
+		Animation = true;
+
+	}
+
+	if (Animation == true){
+
+		if (walkLeftLegForward == true){
+			legRotAngle += 60 * dt;
+			if (legRotAngle >= 30){
+				walkLeftLegForward = false;
+			}
+		}
+
+		if (walkLeftLegForward == false){
+			legRotAngle -= 60 * dt;
+			if (legRotAngle <= -30){
+				walkLeftLegForward = true;
+				Animation = false;
+			}
+		}
+	}
 
 
 }

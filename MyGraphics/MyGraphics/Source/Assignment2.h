@@ -38,10 +38,7 @@ class Assignment2 : public Scene
         GEO_BODY_CYLINDERS,
         GEO_HELMET,
         GEO_CUPSHAPE,
-
-
-
-
+		GEO_HORNS,
 
 
 		NUM_GEOMETRY,
@@ -88,6 +85,7 @@ public:
 	void renderRightLeg();
 	void renderHead();
     void renderBackground();
+	void characterAnimations(double dt);
 
 
 private:
@@ -107,12 +105,23 @@ private:
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
+    
 
-	float leftFullArmRotAngle;
-    float charPositionX, charPositionY, charPositionZ;
-    bool rotUp;
 	Camera camera;
 
+
+	//Animations
+
+	float FullArmRotAngle;
+	float legRotAngle;
+	float charPositionX, charPositionY, charPositionZ;
+
+	bool rotUp;
+	bool Animation;
+	bool Walk;
+	bool walkLeftLegForward;
+	bool MoveArm;
+	bool ShootBullet;
 
 	MS modelStack, viewStack, projectionStack;
 

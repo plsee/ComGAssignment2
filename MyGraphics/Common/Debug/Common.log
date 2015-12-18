@@ -1,8 +1,8 @@
-﻿Build started 12/17/2015 3:23:53 PM.
-     1>Project "C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Common\Common.vcxproj" on node 2 (Build target(s)).
+﻿Build started 12/18/2015 2:54:07 PM.
+     1>Project "C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
-         Common.vcxproj -> C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Debug\Common.lib
-     1>Done Building Project "C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Common\Common.vcxproj" (Build target(s)).
+         Common.vcxproj -> C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Debug\Common.lib
+     1>Done Building Project "C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Common\Common.vcxproj" (Build target(s)).
 
 Build succeeded.
 

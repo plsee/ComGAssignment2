@@ -1,71 +1,71 @@
-﻿Build started 12/17/2015 3:23:53 PM.
-     1>Project "C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\MyGraphics\MyGraphics.vcxproj" on node 2 (Build target(s)).
+﻿Build started 12/18/2015 2:54:07 PM.
+     1>Project "C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\MyGraphics\MyGraphics.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\\glew\include" /I"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\\glfw\include" /I"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\\Common\Source" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Assignment2.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\\glew\include /IC:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\\glfw\include /IC:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\\Common\Source /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Assignment2.cpp
          Assignment2.cpp
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\material.h(40): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\material.h(41): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\material.h(42): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\light.h(41): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\light.h(42): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(96): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(100): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(108): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(115): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(119): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(121): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(124): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(126): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(128): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(131): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(133): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(135): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(140): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(142): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(147): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(149): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(154): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(156): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(161): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(163): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(168): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(170): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(175): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(177): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(184): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(191): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(195): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(196): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(197): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(205): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(206): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(207): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(213): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(216): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(220): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(221): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(222): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(227): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(228): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(229): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(234): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(235): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(236): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(324): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(330): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(476): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(546): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(571): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(582): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(593): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(661): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(687): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(698): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(711): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(857): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\155135s\desktop\comgassignment2\scene5(10 dec)\mygraphics\mygraphics\source\assignment2.cpp(866): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\material.h(40): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\material.h(41): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\material.h(42): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\light.h(41): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\light.h(42): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(99): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(103): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(111): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(118): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(122): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(124): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(127): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(129): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(131): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(134): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(136): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(138): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(143): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(145): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(150): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(152): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(157): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(159): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(164): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(166): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(171): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(173): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(178): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(180): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(187): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(194): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(199): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(201): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(207): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(209): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(217): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(218): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(219): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(225): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(228): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(232): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(233): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(234): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(239): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(240): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(241): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(246): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(247): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(248): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(556): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(581): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(592): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(603): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(671): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(697): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(708): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(721): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(905): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(914): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(1003): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\155135s\desktop\comgassignment2\mygraphics\mygraphics\source\assignment2.cpp(1010): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Debug\MyGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\\glew\lib" /LIBPATH:"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\\glfw\lib-msvc120" /LIBPATH:"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Debug\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Debug\MyGraphics.lib" /MACHINE:X86 Debug\Application.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Debug\MyGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\\glew\lib /LIBPATH:"C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\\glfw\lib-msvc120" /LIBPATH:C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Debug glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Debug\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Debug\MyGraphics.lib" /MACHINE:X86 Debug\Application.obj
          Debug\Assignment1.obj
          Debug\Assignment2.obj
          Debug\Camera.obj
@@ -81,9 +81,9 @@
          Debug\Scenelight2.obj
          Debug\shader.obj
          Debug\Utility.obj
-         MyGraphics.vcxproj -> C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\Debug\MyGraphics.exe
-     1>Done Building Project "C:\Users\155135S\Desktop\ComGAssignment2\Scene5(10 dec)\MyGraphics\MyGraphics\MyGraphics.vcxproj" (Build target(s)).
+         MyGraphics.vcxproj -> C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\Debug\MyGraphics.exe
+     1>Done Building Project "C:\Users\155135S\Desktop\ComGAssignment2\MyGraphics\MyGraphics\MyGraphics.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.19
+Time Elapsed 00:00:01.12
